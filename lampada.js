@@ -1,5 +1,13 @@
 "use strict"
 
+function buttonOnOf (ligarButton, desligarButton) {
+    const ligar = document.getElementById("ligar")
+    const desligar = document.getElementById("desligar")
+
+    ligar.disabled = ligarButton
+    desligar.disabled = desligarButton
+}
+
 function lampadaQuebrada() {
     return document.getElementById("lampada").src.indexOf("quebrada") !== -1
 
@@ -12,8 +20,7 @@ function ligarLampada() {
 
     if(!lampadaQuebrada()) {
         lampada.src = "img/ligada.jpg"
-        ligar.disabled = true
-        desligar.disabled = false
+        buttonOnOf(true, false)
     }
     
 }
@@ -26,8 +33,7 @@ function desligarLampada() {
 
     if(!lampadaQuebrada()) {
         lampada.src = "img/desligada.jpg"
-        ligar.disabled = false
-        desligar.disabled = true
+        buttonOnOf(false, true)
     }
     
 }
@@ -36,8 +42,7 @@ function quebrarLampada() {
     const lampada = document.getElementById("lampada")
 
     lampada.src = "img/quebrada.jpg"
-    ligar.disabled = true
-    desligar.disabled = true
+    buttonOnOf(true, true)
 }
 
 
