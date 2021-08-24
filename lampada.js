@@ -6,7 +6,7 @@ function ligarLampada() {
     const desligar = document.getElementById("desligar")
 
     lampada.src = "img/ligada.jpg"
-    
+
     ligar.disabled = true
     desligar.disabled = false
 }
@@ -26,6 +26,9 @@ function quebrarLampada() {
     const lampada = document.getElementById("lampada")
 
     lampada.src = "img/quebrada.jpg"
+
+    ligar.disabled = true
+    desligar.disabled = true
 }
 
 
