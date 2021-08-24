@@ -1,7 +1,7 @@
 "use strict"
 
 function lampadaQuebrada() {
-    return (document.getElementById("lampada").src.indexOf("quebrada") !== -1);
+    return document.getElementById("lampada").src.indexOf("quebrada") !== -1
 
 }
 
