@@ -9,8 +9,7 @@ function buttonOnOf (ligarButton, desligarButton) {
 }
 
 function lampadaQuebrada() {
-    return document.getElementById("lampada").src.indexOf("quebrada") !== -1
-
+    return (document.getElementById("lampada").src.indexOf("quebrada") !== -1);
 }
 
 function ligarLampada() {
@@ -22,7 +21,6 @@ function ligarLampada() {
         lampada.src = "img/ligada.jpg"
         buttonOnOf(true, false)
     }
-    
 }
 
 function desligarLampada() {
@@ -30,12 +28,10 @@ function desligarLampada() {
     const ligar = document.getElementById("ligar")
     const desligar = document.getElementById("desligar")
 
-
     if(!lampadaQuebrada()) {
         lampada.src = "img/desligada.jpg"
         buttonOnOf(false, true)
     }
-    
 }
 
 function quebrarLampada() {
