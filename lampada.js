@@ -1,44 +1,75 @@
 "use strict"
 
-function buttonOnOf (ligarButton, desligarButton) {
+const lampada = document.getElementById("lampada")
+let idInterval
+
+function buttonOnOfPisc (ligarButton, desligarButton, piscarLampada) {
     const ligar = document.getElementById("ligar")
     const desligar = document.getElementById("desligar")
+    const piscar = document.getElementById("piscar")
 
     ligar.disabled = ligarButton
     desligar.disabled = desligarButton
+    piscar.disabled = piscarLampada
 }
 
-function lampadaQuebrada() {
-    return (document.getElementById("lampada").src.indexOf("quebrada") !== -1);
-}
+// function lampadaQuebrada() {
+//     return lampada.src.indexOf("quebrada") !== -1
+// }
+// function arrow
+
+const lampadaQuebrada = () => lampada.src.indexOf("quebrada") !== -1
 
 function ligarLampada() {
-    const lampada = document.getElementById("lampada")
     const ligar = document.getElementById("ligar")
     const desligar = document.getElementById("desligar")
 
     if(!lampadaQuebrada()) {
         lampada.src = "img/ligada.jpg"
-        buttonOnOf(true, false)
+        buttonOnOfPisc(true, false, false)
     }
 }
 
 function desligarLampada() {
-    const lampada = document.getElementById("lampada")
     const ligar = document.getElementById("ligar")
     const desligar = document.getElementById("desligar")
 
     if(!lampadaQuebrada()) {
         lampada.src = "img/desligada.jpg"
-        buttonOnOf(false, true)
+        buttonOnOfPisc(false, true, false)
     }
 }
 
 function quebrarLampada() {
-    const lampada = document.getElementById("lampada")
-
     lampada.src = "img/quebrada.jpg"
-    buttonOnOf(true, true)
+    buttonOnOfPisc(true, true, true)
+}
+
+// function lampadaDesligada() {
+//     return lampada.src.includes("desligada")
+// }
+
+const lampadaDesligada = () => lampada.src.includes("desligada")
+
+function trocarImagem() {
+    if (lampadaDesligada()) {
+        ligarLampada()
+
+    } else {
+        desligarLampada()
+    }
+}
+
+function piscarLampada() {
+    const piscar = document.getElementById("piscar")
+    if (piscar.textContent == "Piscar") {
+        idInterval = setInterval (trocarImagem, 500)
+
+        piscar.textContent = "Parar"
+    } else {
+        clearInterval (idInterval)
+        piscar.textContent = "Piscar"
+    }
 }
 
 
@@ -47,13 +78,16 @@ document.getElementById("ligar")
     .addEventListener("click", ligarLampada)
 
 document.getElementById("desligar")
-.addEventListener("click", desligarLampada)
+    .addEventListener("click", desligarLampada)
+
+document.getElementById("piscar")
+    .addEventListener("click", piscarLampada)
 
 document.getElementById("lampada")
-.addEventListener("dblclick", quebrarLampada)
+    .addEventListener("dblclick", quebrarLampada)
 
 document.getElementById("lampada")
-.addEventListener("mouseover", ligarLampada)
+    .addEventListener("mouseover", ligarLampada)
 
 document.getElementById("lampada")
-.addEventListener("mouseleave", desligarLampada)
+    .addEventListener("mouseleave", desligarLampada)
