@@ -8,6 +8,8 @@
 
 ![](img/projetoImg2.PNG)
 
+![](img/projetoImg3piscar.PNG)
+
 ![](img/projetoImg3.PNG)
 
 <b>O código foi constuído pensando em boas praticas, como responsabilidade única e funções puras.<b>

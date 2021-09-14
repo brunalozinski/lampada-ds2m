@@ -3,6 +3,9 @@
 const lampada = document.getElementById("lampada")
 let idInterval
 
+const piscar = document.getElementById("piscar")
+piscar.style.backgroundColor = "#32CD32"
+
 function buttonOnOfPisc (ligarButton, desligarButton, piscarLampada) {
     const ligar = document.getElementById("ligar")
     const desligar = document.getElementById("desligar")
@@ -66,9 +69,11 @@ function piscarLampada() {
         idInterval = setInterval (trocarImagem, 500)
 
         piscar.textContent = "Parar"
+        piscar.style.backgroundColor = "#C4202B"
     } else {
         clearInterval (idInterval)
         piscar.textContent = "Piscar"
+        piscar.style.backgroundColor = "#32CD32"
     }
 }
 
