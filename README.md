@@ -4,13 +4,13 @@
 
 <b>O projeto consiste em criar uma lâmpada que tenha quatro ações, ligar, desligar, quebrar e piscar, utilizando vários eventos.<b>
 
-![](img/projetoImg.PNG)
+![](img/img1.PNG)
 
-![](img/projetoImg2.PNG)
+![](img/img2.PNG)
 
-![](img/projetoImg3piscar.PNG)
+![](img/img3.PNG)
 
-![](img/projetoImg3.PNG)
+![](img/img4.PNG)
 
 <b>O código foi constuído pensando em boas praticas, como responsabilidade única e funções puras.<b>
 
